@@ -72,7 +72,7 @@ export default function Home() {
               ✿
             </span>
             <h2 className="font-heading text-lg font-bold leading-tight text-text-light">
-              Jane &amp; John
+              Lena &amp; Fabi
             </h2>
           </div>
           <div className="hidden flex-1 items-center justify-end gap-8 md:flex">
@@ -113,10 +113,10 @@ export default function Home() {
                 >
                   <div className="flex flex-col gap-2">
                     <h1 className="font-heading text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
-                      Jane &amp; John
+                      Lena &amp; Fabi
                     </h1>
                     <h2 className="text-base font-normal leading-normal text-white md:text-xl">
-                      Are getting married on October 10, 2026 at 10:00
+                      Lena &amp; Fabi are getting married on October 10, 2026 at 10:00
                     </h2>
                   </div>
                   <a
@@ -192,7 +192,7 @@ export default function Home() {
                 <div className="relative h-96 w-full">
                   <Image
                     src={heroImage}
-                    alt="Jane and John laughing together."
+                    alt="Lena and Fabi laughing together."
                     fill
                     sizes="(max-width: 768px) 100vw, 512px"
                     className="rounded-xl object-cover"
@@ -260,7 +260,7 @@ export default function Home() {
                       className="block w-full rounded-md border border-gray-300 bg-background-light px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       id="name"
                       name="name"
-                      placeholder="John & Jane Doe"
+                      placeholder="Lena & Fabi Doe"
                       type="text"
                     />
                   </div>
