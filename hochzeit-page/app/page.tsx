@@ -1,18 +1,14 @@
+'use client';
+
 import Image from "next/image";
 import heroImage from "@/public/testBild.png";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 const navLinks = [
   { href: "#details", label: "Details" },
   { href: "#story", label: "Our Story" },
   { href: "#gallery", label: "Gallery" },
   { href: "#rsvp", label: "RSVP" },
-];
-
-const countdown = [
-  { label: "Days", value: "120" },
-  { label: "Hours", value: "14" },
-  { label: "Minutes", value: "30" },
-  { label: "Seconds", value: "55" },
 ];
 
 const weddingDetails = [
@@ -34,6 +30,35 @@ const weddingDetails = [
 ];
 
 export default function Home() {
+  const targetDate = useMemo(() => new Date("2026-10-10T10:00:00"), []);
+
+  const getTimeRemaining = useCallback(() => {
+    const total = targetDate.getTime() - Date.now();
+    if (total <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+    const seconds = Math.floor((total / 1000) % 60);
+    const minutes = Math.floor((total / 1000 / 60) % 60);
+    const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+    const days = Math.floor(total / (1000 * 60 * 60 * 24));
+    return { days, hours, minutes, seconds };
+  }, [targetDate]);
+
+  const [countdown, setCountdown] = useState(getTimeRemaining);
+
+  useEffect(() => {
+    const tick = () => setCountdown(getTimeRemaining());
+    const interval = setInterval(tick, 1000);
+    return () => clearInterval(interval);
+  }, [getTimeRemaining]);
+
+  const countdownData = [
+    { label: "Days", value: countdown.days.toString().padStart(2, "0") },
+    { label: "Hours", value: countdown.hours.toString().padStart(2, "0") },
+    { label: "Minutes", value: countdown.minutes.toString().padStart(2, "0") },
+    { label: "Seconds", value: countdown.seconds.toString().padStart(2, "0") },
+  ];
+
   const heroStyle = {
     backgroundImage: `linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), url(${heroImage.src})`,
   };
@@ -91,7 +116,7 @@ export default function Home() {
                       Jane &amp; John
                     </h1>
                     <h2 className="text-base font-normal leading-normal text-white md:text-xl">
-                      Are getting married on October 26, 2024
+                      Are getting married on October 10, 2026 at 10:00
                     </h2>
                   </div>
                   <a
@@ -106,7 +131,7 @@ export default function Home() {
 
             <section className="mx-auto w-full max-w-lg">
               <div className="flex gap-4 px-4 py-10">
-                {countdown.map((entry) => (
+                {countdownData.map((entry) => (
                   <div key={entry.label} className="flex grow basis-0 flex-col gap-4">
                     <div className="flex h-16 items-center justify-center rounded-lg bg-primary/10 px-3 sm:h-20">
                       <p className="text-2xl font-bold leading-tight text-text-light sm:text-3xl">
@@ -126,7 +151,7 @@ export default function Home() {
                 <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">
                   The Wedding Day
                 </h2>
-                <p className="mt-2 text-text-light/80">October 26, 2024</p>
+                <p className="mt-2 text-text-light/80">October 10, 2026</p>
               </div>
               <div className="mt-8 grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3">
                 {weddingDetails.map((detail) => (

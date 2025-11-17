@@ -14,7 +14,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "Jane & John | Wedding Celebration",
-  description: "First concept draft for Jane & John’s wedding website.",
+  description: "First concept draft for Jane & John's wedding website.",
 };
 
 export default function RootLayout({
