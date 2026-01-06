@@ -59,10 +59,6 @@ export default function Home() {
     { label: "Seconds", value: countdown.seconds.toString().padStart(2, "0") },
   ];
 
-  const heroStyle = {
-    backgroundImage: `linear-gradient(rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%), url(${heroImage.src})`,
-  };
-
   return (
     <div className="relative flex min-h-screen w-full flex-col bg-background-light text-text-light">
       <div className="flex flex-col">
@@ -107,24 +103,32 @@ export default function Home() {
           <div className="flex w-full max-w-5xl flex-1 flex-col px-4 sm:px-6 lg:px-8">
             <section className="w-full">
               <div className="p-0 sm:p-4">
-                <div
-                  className="flex min-h-[60vh] flex-col items-center justify-center gap-6 rounded-xl bg-cover bg-center bg-no-repeat p-4 text-center sm:gap-8 md:min-h-[75vh]"
-                  style={heroStyle}
-                >
-                  <div className="flex flex-col gap-2">
-                    <h1 className="font-heading text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
-                      Lena &amp; Fabi
-                    </h1>
-                    <h2 className="text-base font-normal leading-normal text-white md:text-xl">
-                      Lena &amp; Fabi are getting married on October 10, 2026 at 10:00
-                    </h2>
+                <div className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden rounded-xl text-center sm:gap-8 md:min-h-[75vh]">
+                  <video
+                    className="absolute inset-0 h-full w-full object-cover"
+                    src="/video.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  />
+                  <div className="absolute inset-0 bg-black/60" aria-hidden />
+                  <div className="relative z-10 flex flex-col items-center gap-6 p-4 text-white">
+                    <div className="flex flex-col gap-2">
+                      <h1 className="font-heading text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
+                        Lena &amp; Fabi
+                      </h1>
+                      <h2 className="text-base font-normal leading-normal text-white md:text-xl">
+                        Lena &amp; Fabi are getting married on October 10, 2026 at 10:00
+                      </h2>
+                    </div>
+                    <a
+                      className="flex h-12 min-w-[84px] items-center justify-center rounded-full bg-primary px-5 text-base font-bold text-white transition-opacity hover:opacity-90"
+                      href="#rsvp"
+                    >
+                      <span className="truncate">RSVP</span>
+                    </a>
                   </div>
-                  <a
-                    className="flex h-12 min-w-[84px] items-center justify-center rounded-full bg-primary px-5 text-base font-bold text-white transition-opacity hover:opacity-90"
-                    href="#rsvp"
-                  >
-                    <span className="truncate">RSVP</span>
-                  </a>
                 </div>
               </div>
             </section>
