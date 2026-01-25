@@ -57,6 +57,34 @@ const daySchedule = [
   },
 ];
 
+const infoHighlights = [
+  {
+    title: "Dresscode",
+    emoji: "👗",
+    description: "Festlich & elegant – greift gern zu warmen Tönen und fließenden Stoffen.",
+  },
+  {
+    title: "Geschenkwünsche",
+    emoji: "🎁",
+    description: "Unsere Reisekasse freut sich über jeden Beitrag zu neuen Abenteuern.",
+  },
+  {
+    title: "Parkmöglichkeiten",
+    emoji: "🅿️",
+    description: "Plätze direkt vor Ort sowie entlang der Bergedorfer Straße.",
+  },
+  {
+    title: "Übernachtung",
+    emoji: "🏨",
+    description: "Empfehlung: Hotel Elbblick oder kleine Pensionen am Hafen.",
+  },
+  {
+    title: "Weiteres",
+    emoji: "✨",
+    description: "Fragen? Meldet euch gern bei unseren Trauzeugen Marie & Jonas.",
+  },
+];
+
 export default function Home() {
   const targetDate = useMemo(() => new Date("2026-10-10T10:00:00"), []);
 
@@ -227,6 +255,26 @@ export default function Home() {
                     ))}
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section className="w-full px-4 pb-10">
+              <h2 className="font-heading text-center text-3xl font-bold text-text-light">
+                Alles Wichtige auf einen Blick
+              </h2>
+              <div className="no-scrollbar mt-6 flex gap-4 overflow-x-auto pb-4">
+                {infoHighlights.map((info) => (
+                  <div
+                    key={info.title}
+                    className="min-w-[220px] flex-1 rounded-2xl border border-primary/20 bg-white/80 p-6 text-center shadow-sm"
+                  >
+                    <p className="text-3xl" aria-hidden>
+                      {info.emoji}
+                    </p>
+                    <p className="mt-2 font-heading text-xl text-text-light">{info.title}</p>
+                    <p className="mt-2 text-sm text-text-light/80">{info.description}</p>
+                  </div>
+                ))}
               </div>
             </section>
 
