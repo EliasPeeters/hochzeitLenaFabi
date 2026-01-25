@@ -30,11 +30,31 @@ const weddingDetails = [
 ];
 
 const daySchedule = [
-  { time: "15:00", event: "Ankommen" },
-  { time: "16:00", event: "Trauung" },
-  { time: "17:00", event: "Sektempfang" },
-  { time: "19:00", event: "Abendessen" },
-  { time: "21:00", event: "Party" },
+  {
+    time: "15:00",
+    event: "Ankommen",
+    description: "Sanfter Empfang im Innenhof mit Aperitif und Musik.",
+  },
+  {
+    time: "16:00",
+    event: "Trauung",
+    description: "Feierliche Zeremonie im Krügerischen Haus.",
+  },
+  {
+    time: "17:00",
+    event: "Sektempfang",
+    description: "Prickelnde Drinks & kleine Häppchen.",
+  },
+  {
+    time: "19:00",
+    event: "Abendessen",
+    description: "Festliches Menü und liebevolle Toasts.",
+  },
+  {
+    time: "21:00",
+    event: "Party",
+    description: "Tanzfläche frei – bis tief in die Nacht.",
+  },
 ];
 
 export default function Home() {
@@ -178,24 +198,29 @@ export default function Home() {
                 <h2 className="font-heading text-center text-3xl font-bold text-text-light">
                   Tagesablauf
                 </h2>
+                <p className="mt-3 text-center text-sm uppercase tracking-[0.25em] text-secondary">
+                  Ein liebevoller Leitfaden durch unseren Tag
+                </p>
                 <div className="relative mt-10 pl-12">
-                  <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/30" aria-hidden />
+                  <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/20" aria-hidden />
                   <div className="flex flex-col gap-10">
                     {daySchedule.map((item, index) => (
                       <div key={`${item.time}-${index}`} className="relative flex gap-4">
                         <span
-                          className="absolute left-2 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow"
+                          className="absolute left-1.5 top-0 flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-white text-primary shadow-sm"
                           aria-hidden
                         >
-                          {index + 1}
+                          ●
                         </span>
                         <div className="ml-14">
-                          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary">
                             {item.time}
                           </p>
                           <h3 className="font-heading text-2xl text-text-light">{item.event}</h3>
                           {item.description && (
-                            <p className="mt-1 text-sm text-text-light/70">{item.description}</p>
+                            <p className="mt-1 text-base italic text-text-light/70">
+                              {item.description}
+                            </p>
                           )}
                         </div>
                       </div>
