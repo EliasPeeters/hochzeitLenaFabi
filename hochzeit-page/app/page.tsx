@@ -53,10 +53,10 @@ export default function Home() {
   }, [getTimeRemaining]);
 
   const countdownData = [
-    { label: "Days", value: countdown.days.toString().padStart(2, "0") },
-    { label: "Hours", value: countdown.hours.toString().padStart(2, "0") },
-    { label: "Minutes", value: countdown.minutes.toString().padStart(2, "0") },
-    { label: "Seconds", value: countdown.seconds.toString().padStart(2, "0") },
+    { label: "Tage", value: countdown.days.toString().padStart(2, "0") },
+    { label: "Stunden", value: countdown.hours.toString().padStart(2, "0") },
+    { label: "Minuten", value: countdown.minutes.toString().padStart(2, "0") },
+    { label: "Sekunden", value: countdown.seconds.toString().padStart(2, "0") },
   ];
 
   return (
@@ -136,14 +136,12 @@ export default function Home() {
             <section className="mx-auto w-full max-w-lg">
               <div className="flex gap-4 px-4 py-10">
                 {countdownData.map((entry) => (
-                  <div key={entry.label} className="flex grow basis-0 flex-col gap-4">
-                    <div className="flex h-16 items-center justify-center rounded-lg bg-primary/10 px-3 sm:h-20">
+                  <div key={entry.label} className="flex grow basis-0 flex-col">
+                    <div className="flex h-20 flex-col items-center justify-center rounded-lg bg-white/70 px-3">
                       <p className="text-2xl font-bold leading-tight text-text-light sm:text-3xl">
                         {entry.value}
                       </p>
-                    </div>
-                    <div className="flex items-center justify-center text-sm text-text-light/80">
-                      {entry.label}
+                      <span className="text-sm text-text-light/80">{entry.label}</span>
                     </div>
                   </div>
                 ))}
