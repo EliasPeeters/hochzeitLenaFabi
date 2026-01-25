@@ -150,6 +150,23 @@ export default function Home() {
               </div>
             </section>
 
+            <section className="w-full px-4 py-10">
+              <div className="rounded-xl border border-primary/20 bg-white/70 p-6 text-center shadow-sm">
+                <h2 className="font-heading text-2xl font-bold text-text-light">Location</h2>
+                <p className="mt-3 text-base leading-relaxed text-text-light/80">
+                  Krügerisches Haus, Bergedorfer Str. 28, 21502 Geesthacht
+                </p>
+                <a
+                  href="https://maps.app.goo.gl/WyXbKWRRZycounDM9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                >
+                  Auf Google Maps öffnen
+                </a>
+              </div>
+            </section>
+
             <section className="w-full py-10" id="details">
               <div className="text-center">
                 <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">

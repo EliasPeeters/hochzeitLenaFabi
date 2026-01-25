@@ -5,6 +5,8 @@
   --background-dark: #111921;
   --text-light: #4a4a4a;
   --text-dark: #eaeaea;
+  --font-manrope: "GFS Didot", serif;
+  --font-playfair: "GFS Didot", serif;
 }
 
 @theme inline {
@@ -27,4 +29,10 @@ body {
   background-color: var(--background-light);
   color: var(--text-light);
   font-family: var(--font-manrope), sans-serif;
+}
+
+.gfs-didot-regular {
+  font-family: "GFS Didot", serif;
+  font-weight: 400;
+  font-style: normal;
 }
