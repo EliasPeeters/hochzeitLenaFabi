@@ -8,7 +8,7 @@ const navLinks = [
   { href: "#details", label: "Details" },
   { href: "#story", label: "Our Story" },
   { href: "#gallery", label: "Gallery" },
-  { href: "#rsvp", label: "RSVP" },
+  { href: "#rsvp", label: "Rückmeldung" },
 ];
 
 const weddingDetails = [
@@ -87,7 +87,7 @@ export default function Home() {
               className="flex h-10 min-w-[84px] items-center justify-center rounded-full bg-primary px-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
               href="#rsvp"
             >
-              <span className="truncate">RSVP</span>
+              <span className="truncate">Rückmeldung</span>
             </a>
           </div>
           <button
@@ -126,7 +126,7 @@ export default function Home() {
                       className="flex h-12 min-w-[84px] items-center justify-center rounded-full bg-primary px-5 text-base font-bold text-white transition-opacity hover:opacity-90"
                       href="#rsvp"
                     >
-                      <span className="truncate">RSVP</span>
+                      <span className="truncate">Rückmeldung</span>
                     </a>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ export default function Home() {
             <section className="mx-auto w-full max-w-2xl py-16" id="rsvp">
               <div className="mb-8 text-center">
                 <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">
-                  Kindly RSVP
+                  Kindly Rückmeldung
                 </h2>
                 <p className="mt-2 text-text-light/80">
                   Please respond by September 15th
@@ -313,7 +313,7 @@ export default function Home() {
                   className="flex w-full items-center justify-center rounded-full bg-primary py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
                   type="submit"
                 >
-                  Submit RSVP
+                  Submit Rückmeldung
                 </button>
               </form>
             </section>
