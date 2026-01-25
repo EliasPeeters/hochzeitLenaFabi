@@ -29,6 +29,14 @@ const weddingDetails = [
   },
 ];
 
+const daySchedule = [
+  { time: "15:00", event: "Ankommen" },
+  { time: "16:00", event: "Trauung" },
+  { time: "17:00", event: "Sektempfang" },
+  { time: "19:00", event: "Abendessen" },
+  { time: "21:00", event: "Party" },
+];
+
 export default function Home() {
   const targetDate = useMemo(() => new Date("2026-10-10T10:00:00"), []);
 
@@ -162,6 +170,38 @@ export default function Home() {
                 >
                   Auf Google Maps öffnen
                 </a>
+              </div>
+            </section>
+
+            <section className="w-full px-4 pb-10">
+              <div className="rounded-3xl border border-primary/10 bg-white/80 p-8 shadow-sm">
+                <h2 className="font-heading text-center text-3xl font-bold text-text-light">
+                  Tagesablauf
+                </h2>
+                <div className="relative mt-10 pl-12">
+                  <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/30" aria-hidden />
+                  <div className="flex flex-col gap-10">
+                    {daySchedule.map((item, index) => (
+                      <div key={`${item.time}-${index}`} className="relative flex gap-4">
+                        <span
+                          className="absolute left-2 top-0 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white shadow"
+                          aria-hidden
+                        >
+                          {index + 1}
+                        </span>
+                        <div className="ml-14">
+                          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
+                            {item.time}
+                          </p>
+                          <h3 className="font-heading text-2xl text-text-light">{item.event}</h3>
+                          {item.description && (
+                            <p className="mt-1 text-sm text-text-light/70">{item.description}</p>
+                          )}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </section>
 
