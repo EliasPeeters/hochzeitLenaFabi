@@ -20,6 +20,10 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=GFS+Didot&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className="gfs-didot-regular antialiased">
         {children}

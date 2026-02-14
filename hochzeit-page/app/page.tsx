@@ -4,13 +4,6 @@ import Image from "next/image";
 import heroImage from "@/public/testBild.png";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const navLinks = [
-  { href: "#details", label: "Details" },
-  { href: "#story", label: "Our Story" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#rsvp", label: "Rückmeldung" },
-];
-
 const weddingDetails = [
   {
     icon: "⛪",
@@ -118,48 +111,11 @@ export default function Home() {
   return (
     <div className="relative flex min-h-screen w-full flex-col bg-background-light text-text-light">
       <div className="flex flex-col">
-        <header className="sticky top-0 z-50 flex items-center justify-between border-b border-primary/20 bg-background-light/80 px-4 py-3 font-display backdrop-blur-sm md:px-10">
-          <div className="flex items-center gap-4">
-            <span aria-hidden className="text-2xl text-primary">
-              ✿
-            </span>
-            <h2 className="font-heading text-lg font-bold leading-tight text-text-light">
-              Lena &amp; Fabi
-            </h2>
-          </div>
-          <div className="hidden flex-1 items-center justify-end gap-8 md:flex">
-            <nav className="flex items-center gap-9">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm font-medium leading-normal text-text-light transition-colors hover:text-primary"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-            <a
-              className="flex h-10 min-w-[84px] items-center justify-center rounded-full bg-primary px-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
-              href="#rsvp"
-            >
-              <span className="truncate">Rückmeldung</span>
-            </a>
-          </div>
-          <button
-            type="button"
-            className="text-text-light md:hidden"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-        </header>
-
         <main className="flex flex-1 justify-center py-5">
           <div className="flex w-full flex-1 flex-col px-4 sm:px-6 lg:px-8">
             <section className="w-full">
               <div className="p-0 sm:p-4">
-                <div className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden rounded-xl text-center sm:gap-8 md:min-h-[75vh]">
+                <div className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden rounded-xl md:min-h-[75vh]">
                   <video
                     className="absolute inset-0 h-full w-full object-cover"
                     src="/video.mp4"
@@ -169,20 +125,23 @@ export default function Home() {
                     playsInline
                   />
                   <div className="absolute inset-0 bg-black/60" aria-hidden />
-                  <div className="relative z-10 flex flex-col items-center gap-6 p-4 text-white">
-                    <div className="flex flex-col gap-2">
-                      <h1 className="font-heading text-4xl font-black leading-tight tracking-tight text-white md:text-6xl">
-                        Lena &amp; Fabi
+                  <div className="relative z-10 mx-4 flex flex-col items-center text-center text-white sm:mx-10">
+                    <div className="flex flex-col items-center">
+                      <p className="font-script text-4xl leading-none md:text-5xl">Wir heiraten!</p>
+                      <h1 className="mt-4 font-heading text-6xl leading-[0.9] tracking-wide md:text-7xl">
+                        LENA
                       </h1>
-                      <h2 className="text-base font-normal leading-normal text-white md:text-xl">
-                        Lena &amp; Fabi are getting married on October 10, 2026 at 10:00
+                      <p className="font-script mt-2 text-5xl leading-none md:text-6xl">&amp;</p>
+                      <h2 className="mt-2 font-heading text-6xl leading-[0.9] tracking-wide md:text-7xl">
+                        FABI
                       </h2>
+                      <p className="font-script mt-4 text-4xl leading-none md:text-5xl">- 10.10.26 -</p>
                     </div>
                     <a
-                      className="flex h-12 min-w-[84px] items-center justify-center rounded-full bg-primary px-5 text-base font-bold text-white transition-opacity hover:opacity-90"
+                      className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-semibold tracking-wide text-white shadow-lg shadow-black/25 transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-xl hover:shadow-black/30"
                       href="#rsvp"
                     >
-                      <span className="truncate">Rückmeldung</span>
+                      Rückmeldung
                     </a>
                   </div>
                 </div>
