@@ -156,7 +156,7 @@ export default function Home() {
         </header>
 
         <main className="flex flex-1 justify-center py-5">
-          <div className="flex w-full max-w-5xl flex-1 flex-col px-4 sm:px-6 lg:px-8">
+          <div className="flex w-full flex-1 flex-col px-4 sm:px-6 lg:px-8">
             <section className="w-full">
               <div className="p-0 sm:p-4">
                 <div className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden rounded-xl text-center sm:gap-8 md:min-h-[75vh]">
@@ -221,26 +221,26 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="w-full px-4 pb-10">
-              <div className="rounded-3xl border border-primary/10 bg-white/80 p-8 shadow-sm">
+            <section className="w-full px-2 pb-10 sm:px-4">
+              <div className="rounded-3xl border border-primary/10 bg-white/80 p-4 shadow-sm">
                 <h2 className="font-heading text-center text-3xl font-bold text-text-light">
                   Tagesablauf
                 </h2>
                 <p className="mt-3 text-center text-sm uppercase tracking-[0.25em] text-secondary">
                   Ein liebevoller Leitfaden durch unseren Tag
                 </p>
-                <div className="relative mt-10 pl-12">
-                  <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/20" aria-hidden />
+                <div className="relative mt-8">
+                  <div className="absolute left-5 top-0 bottom-0 w-px bg-primary/20" aria-hidden />
                   <div className="flex flex-col gap-10">
                     {daySchedule.map((item, index) => (
                       <div key={`${item.time}-${index}`} className="relative flex gap-4">
                         <span
-                          className="absolute left-1.5 top-0 flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-white text-primary shadow-sm"
+                          className="absolute left-0.5 top-0 flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-white text-primary shadow-sm"
                           aria-hidden
                         >
                           ●
                         </span>
-                        <div className="ml-14">
+                        <div className="ml-12">
                           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary">
                             {item.time}
                           </p>
