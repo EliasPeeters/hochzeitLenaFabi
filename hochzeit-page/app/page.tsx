@@ -113,7 +113,7 @@ export default function Home() {
       <div className="flex flex-col">
         <main className="flex flex-1 justify-center py-5">
           <div className="flex w-full flex-1 flex-col px-4 sm:px-6 lg:px-8">
-            <section className="w-full">
+            <section className="w-full py-5">
               <div className="p-0 sm:p-4">
                 <div className="relative flex min-h-[60vh] flex-col items-center justify-center overflow-hidden rounded-xl md:min-h-[75vh]">
                   <video
@@ -149,7 +149,7 @@ export default function Home() {
             </section>
 
             <section className="mx-auto w-full max-w-lg">
-              <div className="flex gap-4 px-4 py-10">
+              <div className="flex gap-4 px-2 py-5">
                 {countdownData.map((entry) => (
                   <div key={entry.label} className="flex grow basis-0 flex-col">
                     <div className="flex h-20 flex-col items-center justify-center rounded-lg bg-white/70 px-3">
@@ -163,7 +163,7 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="w-full px-4 py-10">
+            <section className="w-full px-2 py-5">
               <div className="rounded-xl border border-primary/20 bg-white/70 p-6 text-center shadow-sm">
                 <h2 className="font-heading text-2xl font-bold text-text-light">Location</h2>
                 <p className="mt-3 text-base leading-relaxed text-text-light/80">
@@ -180,13 +180,13 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="w-full px-2 pb-10 sm:px-4">
+            <section className="w-full px-2 pb-10 sm:px-4 py-5">
               <div className="rounded-3xl border border-primary/10 bg-white/80 p-4 shadow-sm">
                 <h2 className="font-heading text-center text-3xl font-bold text-text-light">
                   Tagesablauf
                 </h2>
-                <p className="mt-3 text-center text-sm uppercase tracking-[0.25em] text-secondary">
-                  Ein liebevoller Leitfaden durch unseren Tag
+                <p className="mt-3 text-center text-sm uppercase tracking-[0.1em] text-secondary">
+                  Ein grober Leitfaden durch unseren Tag
                 </p>
                 <div className="relative mt-8">
                   <div className="absolute left-5 top-0 bottom-0 w-px bg-primary/20" aria-hidden />
@@ -200,7 +200,7 @@ export default function Home() {
                           ●
                         </span>
                         <div className="ml-12">
-                          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-secondary">
+                          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-secondary">
                             {item.time}
                           </p>
                           <h3 className="font-heading text-2xl text-text-light">{item.event}</h3>
@@ -217,8 +217,8 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="w-full px-4 pb-10">
-              <h2 className="font-heading text-center text-3xl font-bold text-text-light">
+            <section className="w-full px-2 pb-10">
+              <h2 className="font-heading text-center text-3xl font-bold text-white">
                 Alles Wichtige auf einen Blick
               </h2>
               <div className="no-scrollbar mt-6 flex gap-4 overflow-x-auto pb-4">
@@ -237,105 +237,13 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="w-full py-10" id="details">
-              <div className="text-center">
-                <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">
-                  The Wedding Day
-                </h2>
-                <p className="mt-2 text-text-light/80">October 10, 2026</p>
-              </div>
-              <div className="mt-8 grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3">
-                {weddingDetails.map((detail) => (
-                  <div
-                    key={detail.title}
-                    className="flex flex-col items-center gap-4 rounded-xl border border-primary/20 bg-white/70 p-6 text-center"
-                  >
-                    <span aria-hidden className="text-4xl text-secondary">
-                      {detail.icon}
-                    </span>
-                    <div className="flex flex-col gap-1">
-                      <h3 className="font-heading text-lg font-bold leading-tight text-text-light">
-                        {detail.title}
-                      </h3>
-                      <p className="text-sm leading-normal text-text-light/80">
-                        {detail.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-4 px-4">
-                <div className="relative h-80 w-full">
-                  <Image
-                    src={heroImage}
-                    alt="Map preview showing the celebration location."
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 960px"
-                    className="rounded-xl object-cover"
-                    priority
-                  />
-                </div>
-              </div>
-            </section>
-
-            <section className="w-full py-16" id="story">
-              <div className="grid gap-12 md:grid-cols-2 md:items-center">
-                <div className="relative h-96 w-full">
-                  <Image
-                    src={heroImage}
-                    alt="Lena and Fabi laughing together."
-                    fill
-                    sizes="(max-width: 768px) 100vw, 512px"
-                    className="rounded-xl object-cover"
-                  />
-                </div>
-                <div className="flex flex-col gap-4">
-                  <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">
-                    Our Story
-                  </h2>
-                  <p className="text-base leading-relaxed text-text-light/80">
-                    It all started on a crisp autumn day at a local coffee shop. A spilled latte
-                    and a shared laugh was all it took. From that moment, our story began to unfold,
-                    filled with adventure, joy, and countless shared dreams. We&apos;ve explored new
-                    cities, supported each other&apos;s passions, and built a life we love.
-                  </p>
-                  <p className="text-base leading-relaxed text-text-light/80">
-                    Now, we&apos;re taking the next step and couldn&apos;t be more excited to begin
-                    our forever. We are so grateful to have you celebrate this special milestone
-                    with us.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <section className="w-full py-10" id="gallery">
-              <div className="mb-8 text-center">
-                <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">
-                  Gallery
-                </h2>
-              </div>
-              <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-                {Array.from({ length: 4 }).map((_, index) => (
-                  <div key={index} className="relative aspect-square w-full">
-                    <Image
-                      src={heroImage}
-                      alt={`Engagement photo placeholder ${index + 1}`}
-                      fill
-                      sizes="(max-width: 768px) 50vw, 25vw"
-                      className="rounded-lg object-cover"
-                    />
-                  </div>
-                ))}
-              </div>
-            </section>
-
             <section className="mx-auto w-full max-w-2xl py-16" id="rsvp">
               <div className="mb-8 text-center">
-                <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-text-light md:text-4xl">
-                  Kindly Rückmeldung
+                <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
+                  Eure Rückmeldung
                 </h2>
-                <p className="mt-2 text-text-light/80">
-                  Please respond by September 15th
+                <p className="mt-2 px-4 text-white/90 sm:px-8">
+                    Bitte lasst uns bis zum 10.09.2026 wissen, ob ihr dabei sein könnt!
                 </p>
               </div>
               <form className="space-y-6 rounded-xl border border-primary/20 bg-white/70 p-8">
@@ -348,7 +256,7 @@ export default function Home() {
                       Full Name(s)
                     </label>
                     <input
-                      className="block w-full rounded-md border border-gray-300 bg-background-light px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       id="name"
                       name="name"
                       placeholder="Lena & Fabi Doe"
@@ -388,7 +296,7 @@ export default function Home() {
                       Leave a message (optional)
                     </label>
                     <textarea
-                      className="block w-full rounded-md border border-gray-300 bg-background-light px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                       id="message"
                       name="message"
                       placeholder="Wishing you all the best!"
