@@ -166,17 +166,40 @@ export default function Home() {
             <section className="w-full px-2 py-5">
               <div className="rounded-xl border border-primary/20 bg-white/70 p-6 text-center shadow-sm">
                 <h2 className="font-heading text-2xl font-bold text-text-light">Location</h2>
-                <p className="mt-3 text-base leading-relaxed text-text-light/80">
-                  Krügerisches Haus, Bergedorfer Str. 28, 21502 Geesthacht
-                </p>
-                <a
-                  href="https://maps.app.goo.gl/WyXbKWRRZycounDM9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                >
-                  Auf Google Maps öffnen
-                </a>
+                <div className="mt-6 grid gap-6 md:grid-cols-2">
+                  <div className="rounded-2xl border border-primary/15 bg-white/70 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
+                      Trauung
+                    </p>
+                    <p className="mt-3 text-base leading-relaxed text-text-light">
+                      Krügersches Haus, Bergedorfer Str. 28, 21502 Geesthacht
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47b1ef624a41f26f:0xdd0e3d3108769b8b?sa=X&ved=1t:8290&ictx=111"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                    >
+                      Trauung auf Google Maps
+                    </a>
+                  </div>
+                  <div className="rounded-2xl border border-primary/15 bg-white/70 p-5">
+                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
+                      Restlicher Abend
+                    </p>
+                    <p className="mt-3 text-base leading-relaxed text-text-light">
+                      Sebastians, Elbuferstraße 75, 21502 Geesthacht
+                    </p>
+                    <a
+                      href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x47b1e54857f9302d:0x3717b586ad062854?sa=X&ved=1t:8290&ictx=111"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex items-center justify-center rounded-full bg-primary px-6 py-2 text-sm font-bold text-white transition-opacity hover:opacity-90"
+                    >
+                      Abendlocation auf Google Maps
+                    </a>
+                  </div>
+                </div>
               </div>
             </section>
 
