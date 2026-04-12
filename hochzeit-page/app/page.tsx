@@ -111,7 +111,7 @@ const infoHighlights = [
 ];
 
 export default function Home() {
-  const targetDate = useMemo(() => new Date("2026-10-10T10:00:00"), []);
+  const targetDate = useMemo(() => new Date("2026-10-10T14:00:00"), []);
 
   const getTimeRemaining = useCallback(() => {
     const total = targetDate.getTime() - Date.now();
