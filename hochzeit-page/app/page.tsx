@@ -24,29 +24,39 @@ const weddingDetails = [
 
 const daySchedule = [
   {
-    time: "15:00",
+    time: "14:00",
     event: "Ankommen",
-    description: "Sanfter Empfang im Innenhof mit Aperitif und Musik.",
+    image: "/ablauf/ankommen.png",
   },
   {
-    time: "16:00",
-    event: "Trauung",
-    description: "Feierliche Zeremonie im Krügerischen Haus.",
+    time: "14:30",
+    event: "Standesamtliche Trauung im Krügerschen Haus",
+    image: "/ablauf/trauung.svg",
+  },
+  {
+    time: "15:00",
+    event: "Sektempfang und Fotos",
+    image: "/ablauf/sekt.svg",
+  },
+  {
+    time: "16:30",
+    event: "Wechsel zur 2. Location",
+    image: "/ablauf/wechsel.svg",
   },
   {
     time: "17:00",
-    event: "Sektempfang",
-    description: "Prickelnde Drinks & kleine Häppchen.",
+    event: "Start beim Sebastians",
+    image: "/ablauf/start_beim_sebastians.svg",
   },
   {
-    time: "19:00",
+    time: "18:30",
     event: "Abendessen",
-    description: "Festliches Menü und liebevolle Toasts.",
+    image: "/ablauf/abendessen.svg",
   },
   {
-    time: "21:00",
-    event: "Party",
-    description: "Tanzfläche frei – bis tief in die Nacht.",
+    time: "23:00",
+    event: "Ende",
+    image: "/ablauf/ende.svg",
   },
 ];
 
@@ -216,22 +226,20 @@ export default function Home() {
                   <div className="flex flex-col gap-10">
                     {daySchedule.map((item, index) => (
                       <div key={`${item.time}-${index}`} className="relative flex gap-4">
-                        <span
-                          className="absolute left-0.5 top-0 flex h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-white text-primary shadow-sm"
-                          aria-hidden
-                        >
-                          ●
-                        </span>
+                        <div className="absolute left-0 top-0 flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-primary/30 bg-white p-2 shadow-sm">
+                          <Image
+                            src={item.image}
+                            alt={item.event}
+                            width={44}
+                            height={44}
+                            className="h-full w-full object-contain"
+                          />
+                        </div>
                         <div className="ml-12">
                           <p className="text-xs font-semibold uppercase tracking-[0.08em] text-secondary">
                             {item.time}
                           </p>
                           <h3 className="font-heading text-2xl text-text-light">{item.event}</h3>
-                          {item.description && (
-                            <p className="mt-1 text-base italic text-text-light/70">
-                              {item.description}
-                            </p>
-                          )}
                         </div>
                       </div>
                     ))}
