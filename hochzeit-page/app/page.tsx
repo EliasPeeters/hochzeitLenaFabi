@@ -63,28 +63,46 @@ const daySchedule = [
 const infoHighlights = [
   {
     title: "Dresscode",
-    emoji: "👗",
-    description: "Festlich & elegant – greift gern zu warmen Tönen und fließenden Stoffen.",
+    image: "/infos/dresscode.png",
+    description:
+      "Für unsere Hochzeit wünschen wir uns einen sommerlich-festlichen Look in pastelligen Farben. Unsere Farbpalette dient euch dabei gerne als Orientierung.",
+    middleImage: "/infos/colors.jpg",
+    extra:
+      "Eine kleine Bitte: Bitte verzichtet an diesem Tag auf die Farben Weiß, Schwarz und Rot.",
   },
   {
     title: "Geschenkwünsche",
-    emoji: "🎁",
-    description: "Unsere Reisekasse freut sich über jeden Beitrag zu neuen Abenteuern.",
+    image: "/infos/wuensche.png",
+    description:
+      "Wir wünschen uns keine Geschenke, aber über einen kleinen Beitrag zu unserer gemeinsamen Zukunft freuen wir uns sehr.",
   },
   {
-    title: "Parkmöglichkeiten",
-    emoji: "🅿️",
-    description: "Plätze direkt vor Ort sowie entlang der Bergedorfer Straße.",
+    title: "Keine Fotos bei der Trauung",
+    image: "/infos/noFotos.png",
+    description:
+      "Für die Trauung haben wir eine professionelle Fotografin und einen Videografen engagiert. Deshalb bitten wir euch, in dieser Zeit auf Handyaufnahmen zu verzichten. Die Bilder und Videos bekommt ihr im Anschluss natürlich von uns.",
+    extra:
+      "Nach der Trauung freuen wir uns über eure eigenen Schnappschüsse vom weiteren Verlauf des Tages.",
   },
   {
     title: "Übernachtung",
-    emoji: "🏨",
-    description: "Empfehlung: Hotel Elbblick oder kleine Pensionen am Hafen.",
+    image: "/infos/hotel.png",
+    description:
+      "Eine Empfehlung von uns wäre das Hotel Lindenhof in Geesthacht. Alternativ wäre das Hotel Elbblick möglich – meldet euch hierfür bitte zeitnah bei uns.",
+  },
+  {
+    title: "Rückmeldung",
+    image: "/infos/rsvp.png",
+    description:
+      "Wenn wir nichts von dir hören, gehen wir davon aus, dass du bei unserer Feier dabei bist.",
+    extra:
+      "Falls du doch nicht kommen kannst, gib uns bitte so früh wie möglich Bescheid.",
   },
   {
     title: "Weiteres",
-    emoji: "✨",
-    description: "Fragen? Meldet euch gern bei unseren Trauzeugen Marie & Jonas.",
+    image: "/infos/weiteres.png",
+    description:
+      "Für Fragen oder geplante Beiträge zu unserer Hochzeit könnt ihr euch gerne an unsere Trauzeugen Anni (Tel. 0176 72668860) oder Ben (Tel. 0176 81034824) wenden, damit alles zeitlich gut abgestimmt ist.",
   },
 ];
 
@@ -258,11 +276,35 @@ export default function Home() {
                     key={info.title}
                     className="min-w-[220px] flex-1 rounded-2xl border border-primary/20 bg-white/80 p-6 text-center shadow-sm"
                   >
-                    <p className="text-3xl" aria-hidden>
-                      {info.emoji}
+                    <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-white p-3 shadow-sm">
+                      <Image
+                        src={info.image}
+                        alt={info.title}
+                        width={80}
+                        height={80}
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <p className="mt-4 font-heading text-xl text-text-light">{info.title}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-text-light/80">
+                      {info.description}
                     </p>
-                    <p className="mt-2 font-heading text-xl text-text-light">{info.title}</p>
-                    <p className="mt-2 text-sm text-text-light/80">{info.description}</p>
+                    {info.middleImage && (
+                      <div className="mt-4 overflow-hidden rounded-2xl">
+                        <Image
+                          src={info.middleImage}
+                          alt={`${info.title} Farben`}
+                          width={320}
+                          height={180}
+                          className="h-auto w-full object-cover"
+                        />
+                      </div>
+                    )}
+                    {info.extra && (
+                      <p className="mt-3 text-sm leading-relaxed text-text-light/80">
+                        {info.extra}
+                      </p>
+                    )}
                   </div>
                 ))}
               </div>
