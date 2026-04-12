@@ -88,7 +88,11 @@ const infoHighlights = [
     title: "Übernachtung",
     image: "/infos/hotel.png",
     description:
-      "Eine Empfehlung von uns wäre das Hotel Lindenhof in Geesthacht. Alternativ wäre das Hotel Elbblick möglich – meldet euch hierfür bitte zeitnah bei uns.",
+      "Eine Empfehlung von uns wäre das Hotel Lindenhof in Geesthacht.",
+    extra:
+      "Alternativ wäre das Hotel Elbblick möglich – meldet euch hierfür bitte zeitnah bei uns.",
+    linkLabel: "Hotel Lindenhof",
+    linkHref: "https://lindenhofgeesthacht.de/",
   },
   {
     title: "Rückmeldung",
@@ -165,12 +169,6 @@ export default function Home() {
                       </h2>
                       <p className="font-script mt-4 text-4xl leading-none md:text-5xl">- 10.10.26 -</p>
                     </div>
-                    <a
-                      className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-base font-semibold tracking-wide text-white shadow-lg shadow-black/25 transition-all hover:-translate-y-0.5 hover:bg-primary/90 hover:shadow-xl hover:shadow-black/30"
-                      href="#rsvp"
-                    >
-                      Rückmeldung
-                    </a>
                   </div>
                 </div>
               </div>
@@ -274,7 +272,7 @@ export default function Home() {
                 {infoHighlights.map((info) => (
                   <div
                     key={info.title}
-                    className="min-w-[220px] flex-1 rounded-2xl border border-primary/20 bg-white/80 p-6 text-center shadow-sm"
+                    className="w-[320px] shrink-0 rounded-2xl border border-primary/20 bg-white/80 p-6 text-center shadow-sm sm:w-[360px]"
                   >
                     <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-full bg-white p-3 shadow-sm">
                       <Image
@@ -287,7 +285,22 @@ export default function Home() {
                     </div>
                     <p className="mt-4 font-heading text-xl text-text-light">{info.title}</p>
                     <p className="mt-3 text-sm leading-relaxed text-text-light/80">
-                      {info.description}
+                      {info.linkHref && info.linkLabel ? (
+                        <>
+                          Eine Empfehlung von uns wäre das{" "}
+                          <a
+                            href={info.linkHref}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-primary underline underline-offset-2"
+                          >
+                            {info.linkLabel}
+                          </a>{" "}
+                          in Geesthacht.
+                        </>
+                      ) : (
+                        info.description
+                      )}
                     </p>
                     {info.middleImage && (
                       <div className="mt-4 overflow-hidden rounded-2xl">
@@ -310,81 +323,6 @@ export default function Home() {
               </div>
             </section>
 
-            <section className="mx-auto w-full max-w-2xl py-16" id="rsvp">
-              <div className="mb-8 text-center">
-                <h2 className="font-heading text-3xl font-bold leading-tight tracking-tight text-white md:text-4xl">
-                  Eure Rückmeldung
-                </h2>
-                <p className="mt-2 px-4 text-white/90 sm:px-8">
-                    Bitte lasst uns bis zum 10.09.2026 wissen, ob ihr dabei sein könnt!
-                </p>
-              </div>
-              <form className="space-y-6 rounded-xl border border-primary/20 bg-white/70 p-8">
-                <div className="grid grid-cols-1 gap-6">
-                  <div>
-                    <label
-                      className="mb-2 block text-sm font-medium text-text-light/80"
-                      htmlFor="name"
-                    >
-                      Full Name(s)
-                    </label>
-                    <input
-                      className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                      id="name"
-                      name="name"
-                      placeholder="Lena & Fabi Doe"
-                      type="text"
-                    />
-                  </div>
-                  <div>
-                    <p className="mb-2 text-sm font-medium text-text-light/80">
-                      Will you be attending?
-                    </p>
-                    <div className="flex flex-col gap-3 sm:flex-row">
-                      <label className="flex items-center gap-2 text-sm text-text-light">
-                        <input
-                          className="h-4 w-4 border-gray-300 text-primary focus:ring-primary"
-                          id="attending-yes"
-                          name="attendance"
-                          type="radio"
-                        />
-                        Joyfully Attending
-                      </label>
-                      <label className="flex items-center gap-2 text-sm text-text-light">
-                        <input
-                          className="h-4 w-4 border-gray-300 text-primary focus:ring-primary"
-                          id="attending-no"
-                          name="attendance"
-                          type="radio"
-                        />
-                        Regretfully Decline
-                      </label>
-                    </div>
-                  </div>
-                  <div>
-                    <label
-                      className="mb-2 block text-sm font-medium text-text-light/80"
-                      htmlFor="message"
-                    >
-                      Leave a message (optional)
-                    </label>
-                    <textarea
-                      className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-text-light shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                      id="message"
-                      name="message"
-                      placeholder="Wishing you all the best!"
-                      rows={4}
-                    />
-                  </div>
-                </div>
-                <button
-                  className="flex w-full items-center justify-center rounded-full bg-primary py-3 text-sm font-bold text-white transition-opacity hover:opacity-90"
-                  type="submit"
-                >
-                  Submit Rückmeldung
-                </button>
-              </form>
-            </section>
           </div>
         </main>
       </div>
