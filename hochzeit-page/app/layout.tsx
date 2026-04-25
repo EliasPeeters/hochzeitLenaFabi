@@ -21,7 +21,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=League+Spartan:wght@100..900&family=Sanchez:ital@0;1&family=Sirivennela&display=swap"
           rel="stylesheet"
         />
       </head>
