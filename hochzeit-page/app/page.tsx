@@ -60,7 +60,17 @@ const daySchedule = [
   },
 ];
 
-const infoHighlights = [
+type InfoHighlight = {
+  title: string;
+  image: string;
+  description: string;
+  middleImage?: string;
+  extra?: string;
+  linkLabel?: string;
+  linkHref?: string;
+};
+
+const infoHighlights: InfoHighlight[] = [
   {
     title: "Dresscode",
     image: "/infos/dresscode.png",
