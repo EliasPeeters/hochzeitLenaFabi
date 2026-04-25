@@ -40,7 +40,7 @@ const daySchedule = [
   },
   {
     time: "16:30",
-    event: "Wechsel zur 2. Location",
+    event: "Wechsel zur Abendlocation",
     image: "/ablauf/wechsel.svg",
   },
   {
@@ -65,42 +65,40 @@ const infoHighlights = [
     title: "Dresscode",
     image: "/infos/dresscode.png",
     description:
-      "Für unsere Hochzeit wünschen wir uns einen sommerlich-festlichen Look in pastelligen Farben. Unsere Farbpalette dient euch dabei gerne als Orientierung.",
+      "Für unsere Hochzeit wünschen wir uns einen sommerlich-festlichen Look in pastelligen Farben. Unsere Farbpalette dient euch dabei gerne als Orientierung:",
     middleImage: "/infos/colors.jpg",
     extra:
-      "Eine kleine Bitte: Bitte verzichtet an diesem Tag auf die Farben Weiß, Schwarz und Rot.",
+      "Eine kleine Bitte: Bitte verzichtet an diesem Tag auf die Farben Weiß, Schwarz und Rot",
   },
   {
     title: "Geschenkwünsche",
     image: "/infos/wuensche.png",
     description:
-      "Wir wünschen uns keine Geschenke, aber über einen kleinen Beitrag zu unserer gemeinsamen Zukunft freuen wir uns sehr.",
+      "Wir wünschen uns keine Geschenke, aber über einen kleinen Beitrag zu unserer gemeinsamen Zukunft würden wir uns sehr freuen",
   },
   {
     title: "Keine Fotos bei der Trauung",
     image: "/infos/noFotos.png",
     description:
-      "Für die Trauung haben wir eine professionelle Fotografin und einen Videografen engagiert. Deshalb bitten wir euch, in dieser Zeit auf Handyaufnahmen zu verzichten. Die Bilder und Videos bekommt ihr im Anschluss natürlich von uns.",
+      "Für die Trauung haben wir eine professionelle Fotografin und einen Videografen engagiert. Deshalb bitten wir euch, in dieser Zeit auf Handyaufnahmen zu verzichten. Die Bilder und Videos werden euch im Anschluss zur Verfügung gestellt.",
     extra:
-      "Nach der Trauung freuen wir uns über eure eigenen Schnappschüsse vom weiteren Verlauf des Tages.",
+      "Nach der Trauung freuen wir uns über eure eigenen Schnappschüsse vom weiteren Verlauf des Tages",
   },
   {
     title: "Übernachtung",
     image: "/infos/hotel.png",
     description:
-      "Eine Empfehlung von uns wäre das Hotel Lindenhof in Geesthacht.",
+      "Eine Übernachtungsempfehlung von uns ist das Hotel Lindenhof in Geesthacht.",
     extra:
-      "Alternativ wäre das Hotel Elbblick möglich – meldet euch hierfür bitte zeitnah bei uns.",
-    linkLabel: "Hotel Lindenhof",
-    linkHref: "https://lindenhofgeesthacht.de/",
+      "Alternativ steht das Hotel Elbblick zur Verfügung – meldet euch bei Interesse bitte zeitnah bei uns",
   },
   {
     title: "Rückmeldung",
     image: "/infos/rsvp.png",
     description:
-      "Wenn wir nichts von dir hören, gehen wir davon aus, dass du bei unserer Feier dabei bist.",
+      "Wenn wir nichts von euch hören, gehen wir davon aus, dass ihr bei unserer Feier dabei sein werdet.",
     extra:
-      "Falls du doch nicht kommen kannst, gib uns bitte so früh wie möglich Bescheid.",
+      "Falls ihr doch nicht kommen könnt, gebt uns bitte so früh wie möglich Bescheid",
   },
   {
     title: "Weiteres",
@@ -195,7 +193,7 @@ export default function Home() {
                 <div className="mt-6 grid gap-6 md:grid-cols-2">
                   <div className="rounded-2xl border border-primary/15 bg-white/70 p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
-                      Trauung
+                      Location für die Trauung
                     </p>
                     <p className="mt-3 text-base leading-relaxed text-text-light">
                       Krügersches Haus, Bergedorfer Str. 28, 21502 Geesthacht
@@ -211,7 +209,7 @@ export default function Home() {
                   </div>
                   <div className="rounded-2xl border border-primary/15 bg-white/70 p-5">
                     <p className="text-xs font-semibold uppercase tracking-[0.12em] text-secondary">
-                      Restlicher Abend
+                      Location für den restlichen Abend
                     </p>
                     <p className="mt-3 text-base leading-relaxed text-text-light">
                       Sebastians, Elbuferstraße 75, 21502 Geesthacht
@@ -306,14 +304,14 @@ export default function Home() {
                             href="tel:+4917672668860"
                             className="font-semibold text-primary underline underline-offset-2"
                           >
-                            Anni (0176 72668860)
+                            Anni (Tel. 0176 72668860)
                           </a>{" "}
                           oder{" "}
                           <a
                             href="tel:+4917681034824"
                             className="font-semibold text-primary underline underline-offset-2"
                           >
-                            Ben (0176 81034824)
+                            Ben (Tel. 0176 81034824)
                           </a>{" "}
                           wenden, damit alles zeitlich gut abgestimmt ist.
                         </>
