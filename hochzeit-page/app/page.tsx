@@ -106,7 +106,7 @@ const infoHighlights = [
     title: "Weiteres",
     image: "/infos/weiteres.png",
     description:
-      "Für Fragen oder geplante Beiträge zu unserer Hochzeit könnt ihr euch gerne an unsere Trauzeugen Anni (Tel. 0176 72668860) oder Ben (Tel. 0176 81034824) wenden, damit alles zeitlich gut abgestimmt ist.",
+      "Für Fragen oder geplante Beiträge zu unserer Hochzeit könnt ihr euch gerne an unsere Trauzeugen wenden, damit alles zeitlich gut abgestimmt ist.",
   },
 ];
 
@@ -252,7 +252,7 @@ export default function Home() {
                           />
                         </div>
                         <div className="ml-12">
-                          <p className="text-xs font-semibold uppercase tracking-[0.08em] text-secondary">
+                          <p className="text-base font-bold uppercase tracking-[0.08em] text-secondary sm:text-lg">
                             {item.time}
                           </p>
                           <h3 className="font-heading text-2xl text-text-light">{item.event}</h3>
@@ -297,6 +297,25 @@ export default function Home() {
                             {info.linkLabel}
                           </a>{" "}
                           in Geesthacht.
+                        </>
+                      ) : info.title === "Weiteres" ? (
+                        <>
+                          Für Fragen oder geplante Beiträge zu unserer Hochzeit
+                          könnt ihr euch gerne an unsere Trauzeugen{" "}
+                          <a
+                            href="tel:+4917672668860"
+                            className="font-semibold text-primary underline underline-offset-2"
+                          >
+                            Anni (0176 72668860)
+                          </a>{" "}
+                          oder{" "}
+                          <a
+                            href="tel:+4917681034824"
+                            className="font-semibold text-primary underline underline-offset-2"
+                          >
+                            Ben (0176 81034824)
+                          </a>{" "}
+                          wenden, damit alles zeitlich gut abgestimmt ist.
                         </>
                       ) : (
                         info.description
