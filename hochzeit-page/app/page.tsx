@@ -167,7 +167,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-black/60" aria-hidden />
                   <div className="relative z-10 mx-4 flex flex-col items-center text-center text-white sm:mx-10">
                     <div className="flex flex-col items-center">
-                      <p className="font-script text-4xl leading-none md:text-5xl">Wir heiraten!</p>
+                      <p className="font-script text-7xl leading-none md:text-8xl">Wir heiraten!</p>
                       <h1 className="mt-4 font-heading text-6xl leading-[0.9] tracking-wide md:text-7xl">
                         LENA
                       </h1>
