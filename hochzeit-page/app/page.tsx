@@ -323,7 +323,7 @@ export default function Home() {
                           >
                             Ben (Tel. 0176 81034824)
                           </a>{" "}
-                          wenden, damit alles zeitlich gut abgestimmt ist.
+                          wenden, damit alles zeitlich gut abgestimmt ist
                         </>
                       ) : (
                         info.description
